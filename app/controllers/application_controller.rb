@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    redirect '/tweets'
+    erb :index
   end
 
   helpers do
