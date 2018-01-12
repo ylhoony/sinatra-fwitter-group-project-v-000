@@ -17,6 +17,8 @@ class TweetsController < ApplicationController
   post '/tweets' do
     binding.pry
     @tweet = Tweet.create(params)
+    @tweet.user = User.find(session[:user_id])
+    @tweet.save
     
   end
 
