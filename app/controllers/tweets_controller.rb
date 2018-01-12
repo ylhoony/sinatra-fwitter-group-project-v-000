@@ -52,6 +52,7 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets/:id' do
+    binding.pry
 
   end
 
