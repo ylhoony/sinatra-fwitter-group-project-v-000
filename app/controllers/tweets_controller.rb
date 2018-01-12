@@ -19,7 +19,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.create(params)
     @tweet.user = User.find(session[:user_id])
     @tweet.save
-    
+
   end
 
 
