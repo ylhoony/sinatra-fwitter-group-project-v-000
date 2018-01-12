@@ -44,7 +44,7 @@ class TweetsController < ApplicationController
       if current_user.tweets.include?(@tweet)
         erb :"/tweets/edit"
       else
-        redirect "/tweets/#{params[:id]}/edit"
+        redirect "/tweets/#{params[:id]}"
       end
     else
       redirect "/login"
