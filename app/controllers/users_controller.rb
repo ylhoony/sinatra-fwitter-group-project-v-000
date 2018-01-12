@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    # binding.pry
+    redirect "/tweets" if logged_in?
     if params[:username].empty? || params[:email].empty? || params[:password].empty?
       redirect "/signup"
     else
