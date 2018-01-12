@@ -39,7 +39,7 @@ class TweetsController < ApplicationController
   end
 
   get '/tweets/:id/edit' do
-    
+    erb :"/tweets/edit"
   end
 
   post '/tweets/:id' do
