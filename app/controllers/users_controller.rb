@@ -20,11 +20,11 @@ class UsersController < ApplicationController
 
   post '/login' do
     user = User.find_by(params[:username])
-    if user & user.authenticate(params[:password])
+    if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect '/'
     else
-      
+
     end
   end
 
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     end
 
     def current_user
-      
+
     end
   end
 
