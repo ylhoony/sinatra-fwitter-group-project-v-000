@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
 
   get '/signup' do
-    redirect "/tweets" if logged_in?
-    erb :"users/signup"
+    if logged_in?
+      redirect "/tweets"
+    else
+      erb :"users/signup"
+    end
   end
 
   post '/signup' do
