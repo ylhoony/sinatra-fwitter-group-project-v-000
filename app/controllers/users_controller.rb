@@ -43,6 +43,10 @@ class UsersController < ApplicationController
     redirect "/login"
   end
 
+  get '/users/:slug' do
+    erb :
+  end
+
 
 
 end
