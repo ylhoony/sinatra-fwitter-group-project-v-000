@@ -66,11 +66,12 @@ class TweetsController < ApplicationController
       @tweet = Tweet.find(params[:id])
       if current_user.tweets.include?(@tweet)
         @tweet.delete
+        redirect "/tweets"
       else
-        redirect
+        redirect "/tweets/:id"
       end
     else
-      redirect
+      redirect "/tweets/:id"
     end
   end
 
