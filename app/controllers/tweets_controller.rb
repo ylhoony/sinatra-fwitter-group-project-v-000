@@ -16,6 +16,7 @@ class TweetsController < ApplicationController
 
   post '/tweets' do
     binding.pry
+    @tweet = Tweet.create(params)
     
   end
 
