@@ -22,9 +22,9 @@ class UsersController < ApplicationController
     user = User.find_by(params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect '/tweets'
+      redirect "/tweets"
     else
-      redirect '/login'
+      redirect "/login"
     end
   end
 
