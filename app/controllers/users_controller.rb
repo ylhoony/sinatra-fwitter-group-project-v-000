@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
 
   get '/signup' do
+    redirect "/tweets" if logged_in?
     erb :"users/signup"
   end
 
   post '/signup' do
-    redirect "/tweets" if logged_in?
+    
     if params[:username].empty? || params[:email].empty? || params[:password].empty?
       redirect "/signup"
     else
