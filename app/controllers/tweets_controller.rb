@@ -20,17 +20,13 @@ class TweetsController < ApplicationController
 
   post '/tweets' do
     # binding.pry
-    if !logged_in?
-
+    if !params[:content].empty?
+      @tweet = Tweet.create(params)
+      @tweet.user = User.find(session[:user_id])
+      @tweet.save
+      redirect "/tweets"
     else
-      if !params[:content].empty?
-        @tweet = Tweet.create(params)
-        @tweet.user = User.find(session[:user_id])
-        @tweet.save
-        redirect "/tweets"
-      else
-        redirect "/tweets/new"
-      end
+      redirect "/tweets/new"
     end
   end
 
