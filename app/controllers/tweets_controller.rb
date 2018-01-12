@@ -62,9 +62,16 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets/:id/delete' do
-    binding.pry
-    @tweet = Tweet.find(params[:id])
-    @tweet.delete
+    if logged_in?
+      @tweet = Tweet.find(params[:id])
+      if current_user.tweets.include?(@tweet)
+        @tweet.delete
+      else
+        redirect
+      end
+    else
+      redirect
+    end
   end
 
 
