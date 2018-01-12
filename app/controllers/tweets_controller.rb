@@ -62,6 +62,7 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets/:id/delete' do
+    binding.pry
     @tweet = Tweet.find(params[:id])
     @tweet.delete
   end
