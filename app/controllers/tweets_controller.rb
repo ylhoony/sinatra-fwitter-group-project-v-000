@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
   get '/tweets' do
     # binding.pry
     if logged_in?
-      erb :"views/index"
+      erb :"tweets/index"
     else
       redirect "/login"
     end
