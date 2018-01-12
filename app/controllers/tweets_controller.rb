@@ -52,10 +52,13 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets/:id' do
-    @tweet = Tweet.find(params[:id])
-    @tweet.content = params[:content]
-    @tweet.save
-
+    if !params[:content].empty?
+      @tweet = Tweet.find(params[:id])
+      @tweet.content = params[:content]
+      @tweet.save
+    else
+      redirect "/tweets/#{params[:id]}"
+    end
   end
 
 
