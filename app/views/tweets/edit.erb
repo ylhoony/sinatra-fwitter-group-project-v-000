@@ -1,6 +1,6 @@
 <h2>Edit Tweet</h2>
 
-<form action="/tweets" method="post">
+<form action="/tweets/<%=@tweet.id%>" method="post">
 
   <input type="text" name="content">
   <button type="submit">submit</button>
