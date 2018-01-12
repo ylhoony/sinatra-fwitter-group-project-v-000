@@ -18,6 +18,14 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  get '/new' do
+    if logged_in?
+      redirect "/tweets"
+    else
+      erb :index
+    end
+  end
+
   helpers do
     def logged_in?
       !!session[:user_id]
