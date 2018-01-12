@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
+    user = User.find_by(params[:username])
     binding.pry
 
   end
