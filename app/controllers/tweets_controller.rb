@@ -19,7 +19,6 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
-    # binding.pry
     if !params[:content].empty?
       @tweet = Tweet.create(params)
       @tweet.user = User.find(session[:user_id])
