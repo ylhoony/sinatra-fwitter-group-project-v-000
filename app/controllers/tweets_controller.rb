@@ -39,11 +39,15 @@ class TweetsController < ApplicationController
   end
 
   get '/tweets/:id/edit' do
-    erb :"/tweets/edit"
+    if logged_in?
+      erb :"/tweets/edit"
+    else
+      redirect "/login"
+    end
   end
 
   post '/tweets/:id' do
-    
+
   end
 
 
