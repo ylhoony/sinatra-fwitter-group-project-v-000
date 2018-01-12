@@ -53,6 +53,7 @@ class TweetsController < ApplicationController
 
   post '/tweets/:id' do
     binding.pry
+    @tweet = Tweet.find(params[:id])
 
   end
 
