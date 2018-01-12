@@ -24,13 +24,18 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect '/'
     else
-
+      
+    end
   end
 
 
   helpers do
     def logged_in?
       !!session[:user_id]
+    end
+
+    def current_user
+      
     end
   end
 
