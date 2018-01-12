@@ -52,7 +52,6 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets/:id' do
-    binding.pry
     @tweet = Tweet.find(params[:id])
     @tweet.content = params[:content]
     @tweet.save
