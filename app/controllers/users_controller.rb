@@ -44,7 +44,8 @@ class UsersController < ApplicationController
   end
 
   get '/users/:slug' do
-    erb :
+    @user = User.find_by_slug(params[:slug])
+    erb :"users/<%= %>"
   end
 
 
